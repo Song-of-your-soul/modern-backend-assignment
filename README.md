@@ -1,4 +1,4 @@
-Hello! Excited for the upcoming course!
+Hello! My name is Kyrylo Zaitsev. I am excited for the upcoming course!
 
 I hope that I designed it not too clunky. 
 
