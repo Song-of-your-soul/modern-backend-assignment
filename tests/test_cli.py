@@ -38,10 +38,11 @@ def test_happy_path_prints_city_and_temp():
 
     assert "kyiv" in out.lower(), "City name should be in the output"
 
-    assert re.search(r"\d{4}/\d{2}/\d{2}",
-                     out), "Date format should be DD/MM/YYYY"
+    assert re.search(r"\d{4}-\d{2}-\d{2}",
+                     out), "Date format should be DD-MM-YYYY"
     assert re.search(r"\d+\.\d+\s*°\s*[Cc]",
                      out), "Temperature should be in Celsius"
+    print("Everythng is ok")
 
 
 def test_error_path_when_no_city():
@@ -55,6 +56,9 @@ def test_error_path_when_no_city():
         assert re.search(
             r"city.*required|enter.*city", proc.stdout, re.I
         ), "Should prompt for city when none provided"
+    print("Everythng is ok")
 
 
 execute_script("Kyiv")
+test_happy_path_prints_city_and_temp()
+test_error_path_when_no_city()
